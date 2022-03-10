@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private bool _aPressed, _dPressed, _spacePressed; // keeping track of which key is pressed
+
+    private bool _grounded; // keep track of whether player is in the air or on a platform
     private Rigidbody2D _playerBody;
 
     private const float _jumpHeight = 2.0f;
@@ -31,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
             _playerBody.MovePosition(transform.position + Vector3.right * Time.fixedDeltaTime * _movementSpeed);
         }
 
-        if(_spacePressed){
+        if(_spacePressed && _grounded){
             _playerBody.AddForce(Vector2.up * _jumpHeight, ForceMode2D.Impulse);
         }  
     }
@@ -58,4 +60,16 @@ public class PlayerMovement : MonoBehaviour
             _spacePressed = false;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Platform"){
+            _grounded = true;
+        }    
+    }
+
+   private void OnCollisionExit2D(Collision2D other) {
+       if(other.gameObject.tag == "Platform"){
+            _grounded = false;
+        } 
+   }
 }
