@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _playerBody;
 
     private const float _jumpHeight = 2.0f;
-    private const float _movementSpeed = 5.0f;
+    private const float _movementSpeed = 15.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +26,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate() {
         if(_aPressed){
-            _playerBody.MovePosition(transform.position + Vector3.left * Time.fixedDeltaTime * _movementSpeed);
+            _playerBody.AddForce(Vector2.left * _movementSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
         }
 
         if(_dPressed){
-            _playerBody.MovePosition(transform.position + Vector3.right * Time.fixedDeltaTime * _movementSpeed);
+            _playerBody.AddForce(Vector2.right * _movementSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
         }
 
         if(_spacePressed && _grounded){
