@@ -4,36 +4,39 @@ using UnityEngine;
 
 public class ColourSwitch : MonoBehaviour
 {
-    private SpriteRenderer playerSprite;
+    private SpriteRenderer objectSprite;
 
-    bool isRed, isBlue;
+    public bool isRed, isBlue;
     // Start is called before the first frame update
     void Start()
     {
-        playerSprite = GetComponent<SpriteRenderer>();
-        playerSprite.color = Color.blue; 
-
-        isBlue = true;
-        isRed = false;
+        objectSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        setColour();
     }
 
     public void Switch(){
         if(isRed){
-            playerSprite.color = Color.blue; 
             isBlue = true;
             isRed = false;
         }
         else if(isBlue){
-            playerSprite.color = Color.red;
             isRed = true;
             isBlue = false;
         }
        
+    }
+
+    void setColour(){
+        if(isRed){
+            objectSprite.color = Color.red;
+        }
+        else if(isBlue){
+            objectSprite.color = Color.blue;
+        }
     }
 }
