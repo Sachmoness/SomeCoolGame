@@ -16,27 +16,30 @@ public class ColourSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        setColour();
+        
     }
 
     public void Switch(){
         if(isRed){
             isBlue = true;
             isRed = false;
+            EventHandler.PlayerBlue();
         }
         else if(isBlue){
             isRed = true;
             isBlue = false;
+            EventHandler.PlayerRed();
         }
-       
+        
+        SetColour();
     }
 
-    void setColour(){
+    void SetColour(){
         if(isRed){
             objectSprite.color = Color.red;
         }
         else if(isBlue){
             objectSprite.color = Color.blue;
-        }
+        }        
     }
 }

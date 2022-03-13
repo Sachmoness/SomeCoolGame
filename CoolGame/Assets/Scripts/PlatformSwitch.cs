@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlatformSwitch : MonoBehaviour
 {
     private BoxCollider2D platformCollider;
+    public bool isRed;
+    public bool isBlue;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,14 +20,32 @@ public class PlatformSwitch : MonoBehaviour
     }
 
     private void OnEnable() {
-        EventHandler.PlayerJumped += DisableCollider;
+        if(isRed){
+            EventHandler.PlayerRed += EnableCollider;
+            EventHandler.PlayerBlue += DisableCollider;
+        }
+        else if(isBlue){
+            EventHandler.PlayerBlue += EnableCollider;
+            EventHandler.PlayerRed += DisableCollider;
+        }
     }
 
     private void OnDisable() {
-        EventHandler.PlayerJumped -= DisableCollider;
+           if(isRed){
+            EventHandler.PlayerRed -= EnableCollider;
+            EventHandler.PlayerBlue -= DisableCollider;
+        }
+        else if(isBlue){
+            EventHandler.PlayerBlue -= EnableCollider;
+            EventHandler.PlayerRed -= DisableCollider;
+        }
     }
 
     void DisableCollider(){
         platformCollider.isTrigger = true;
+    }
+
+    void EnableCollider(){
+        platformCollider.isTrigger = false;
     }
 }
