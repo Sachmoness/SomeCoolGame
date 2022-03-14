@@ -15,10 +15,16 @@ public class GameManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            ExitGame();
+        }
     }
 
     public void NextLevel(){
         SceneManager.LoadScene(currentLevel+1);
+    }
+
+    void ExitGame(){
+        Application.Quit();
     }
 }
