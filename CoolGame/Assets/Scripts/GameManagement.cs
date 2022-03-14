@@ -24,6 +24,14 @@ public class GameManagement : MonoBehaviour
         SceneManager.LoadScene(currentLevel+1);
     }
 
+    public void OpenMainMenu(){
+         SceneManager.LoadScene("Menu");
+    }
+
+    public void OpenHelp(){
+        SceneManager.LoadScene("Help");
+    }
+
     void ExitGame(){
         Application.Quit();
     }
