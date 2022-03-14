@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
-    private GameObject spawnPoint;
+    private GameObject _spawnPoint;
     // Start is called before the first frame update
     void Start()
     {
-        spawnPoint = GameObject.FindGameObjectWithTag("Respawn");
+        _spawnPoint = GameObject.FindGameObjectWithTag("Respawn");
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class PlayerRespawn : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Fall"){
-            transform.position = spawnPoint.transform.position;
+            transform.position = _spawnPoint.transform.position;
         }
     }
 }
