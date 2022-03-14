@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 94
+  controlID: 15
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -346,21 +346,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity\Projects\SomeCoolGame\CoolGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e45e0000
-    m_LastClickedID: 24292
+    m_SelectedIDs: e65e0000
+    m_LastClickedID: 24294
     m_ExpandedIDs: 00000000c65e0000c85e0000ca5e0000cc5e0000ce5e0000d05e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -517,25 +517,25 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3cf1ffff
-      m_LastClickedID: -3780
-      m_ExpandedIDs: b4f1ffff7af3ffff1cf7ffff1cfbffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: f491ffff5895ffff0696ffff0298ffff10a0ffff82b3ffffc6b3ffff02c0ffffc4c2ffffdac2ffff16c3ffff86c5ffff52ccffff96ccffffe4ccffff16cfffff88d0ffff36d1ffffe2d7ffffc4d8ffff76d9ffff90e0ffff3ee8ffffd0f6ffffd4f7ffff1cfbffffa08000008a810000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Main Camera
-        m_OriginalName: Main Camera
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 29892
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 4}
+        m_ClientGUIView: {fileID: 11}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -790,9 +790,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 7.647852, y: -1.1801862, z: -0.38641638}
+    m_Target: {x: 0.20920411, y: 0.21708946, z: 3.2048738}
     speed: 2
-    m_Value: {x: 7.647852, y: -1.1801862, z: -0.38641638}
+    m_Value: {x: 0.20920411, y: 0.21708946, z: 3.2048738}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -843,9 +843,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 11.945967
+    m_Target: 7.8635287
     speed: 2
-    m_Value: 11.945967
+    m_Value: 7.8635287
   m_Ortho:
     m_Target: 1
     speed: 2
