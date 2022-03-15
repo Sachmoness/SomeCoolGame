@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        Spin();
+        Spin(); // rotate "coin" 
     }
 
     void Spin(){

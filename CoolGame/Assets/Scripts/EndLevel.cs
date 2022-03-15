@@ -26,7 +26,7 @@ public class EndLevel : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)  // if player reaches "coin" then play sound and load next level.
     {
         if(other.gameObject.tag == "Coin"){
             EventHandler.CoinReached();

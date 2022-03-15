@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         Jump();
     }
 
-    void FixedUpdate() {
+    void FixedUpdate() { // move left and right
         if(_aPressed){
             _playerBody.AddForce(Vector2.left * _movementSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
         }
@@ -68,13 +68,13 @@ public class PlayerMovement : MonoBehaviour
         }  
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
+    private void OnCollisionEnter2D(Collision2D other) { // detect if player is on a platform
         if(other.gameObject.tag == "Platform"){
             _grounded = true;
         }    
     }
 
-   private void OnCollisionExit2D(Collision2D other) {
+   private void OnCollisionExit2D(Collision2D other) {  // detect if player has jumped
        if(other.gameObject.tag == "Platform"){
             _grounded = false;
         } 

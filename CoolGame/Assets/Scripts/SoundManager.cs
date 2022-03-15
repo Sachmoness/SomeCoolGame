@@ -40,7 +40,9 @@ public class SoundManager : MonoBehaviour
         EventHandler.PlayerJumped -= PlayJumpSound;
     }
 
-    public void PlayCoinSound(){
+    // Methods for playing audioclips:
+    
+    public void PlayCoinSound(){ 
         _soundSource.PlayOneShot(_coinSound);
     }
 

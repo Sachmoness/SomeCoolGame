@@ -23,7 +23,7 @@ public class ColourSwitch : MonoBehaviour
         if(isRed){
             isBlue = true;
             isRed = false;
-            EventHandler.PlayerBlue();
+            EventHandler.PlayerBlue(); // trigger event to trigger the colliders of platforms
         }
         else if(isBlue){
             isRed = true;
@@ -34,7 +34,7 @@ public class ColourSwitch : MonoBehaviour
         SetColour();
     }
 
-    void SetColour(){
+    void SetColour(){  // change cube colour
         if(isRed){
             objectSprite.color = Color.red;
         }

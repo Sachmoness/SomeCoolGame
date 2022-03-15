@@ -15,24 +15,24 @@ public class GameManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)){
+        if(Input.GetKeyDown(KeyCode.Escape)){  // close game Esc key
             ExitGame();
         }
     }
 
-    public void NextLevel(){
+    public void NextLevel(){ // load next scene in build
         SceneManager.LoadScene(currentLevel+1);
     }
 
-    public void OpenMainMenu(){
+    public void OpenMainMenu(){  // load menu scene
          SceneManager.LoadScene("Menu");
     }
-
-    public void OpenHelp(){
+ 
+    public void OpenHelp(){ // load help scene
         SceneManager.LoadScene("Help");
     }
 
-    void ExitGame(){
+    void ExitGame(){ // quit application
         Application.Quit();
     }
 }

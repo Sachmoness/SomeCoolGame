@@ -19,7 +19,7 @@ public class PlatformSwitch : MonoBehaviour
         
     }
 
-    private void OnEnable() {
+    private void OnEnable() {  // Listen for events, turn red/blue platform colliders on/off depending on player colour.
         if(isRed){
             EventHandler.PlayerRed += EnableCollider;
             EventHandler.PlayerBlue += DisableCollider;
@@ -41,11 +41,11 @@ public class PlatformSwitch : MonoBehaviour
         }
     }
 
-    void DisableCollider(){
+    void DisableCollider(){  // turn box collider off
         platformCollider.isTrigger = true;
     }
 
-    void EnableCollider(){
+    void EnableCollider(){ // turn box collider on
         platformCollider.isTrigger = false;
     }
 }

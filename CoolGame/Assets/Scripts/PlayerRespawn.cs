@@ -19,7 +19,7 @@ public class PlayerRespawn : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Fall"){
+        if(other.gameObject.tag == "Fall"){ // if player fall off platforms respawn them at start
             transform.position = _spawnPoint.transform.position;
             EventHandler.PlayerFell();
         }
