@@ -6,6 +6,14 @@ public class EndLevel : MonoBehaviour
 {
 
     private GameObject _gameManager;
+
+    IEnumerator NextLevel() // coroutine to delay loading of next level so sound can finish playing
+    {
+        yield return new WaitForSeconds(0.3f);
+        _gameManager.GetComponent<GameManagement>().NextLevel();
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +30,7 @@ public class EndLevel : MonoBehaviour
     {
         if(other.gameObject.tag == "Coin"){
             EventHandler.CoinReached();
-            _gameManager.GetComponent<GameManagement>().NextLevel();
+            StartCoroutine("NextLevel");
         }
     }
 }
