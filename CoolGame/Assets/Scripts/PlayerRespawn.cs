@@ -21,6 +21,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         if(other.gameObject.tag == "Fall"){
             transform.position = _spawnPoint.transform.position;
+            EventHandler.PlayerFell();
         }
     }
 }

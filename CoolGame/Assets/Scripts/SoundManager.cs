@@ -17,7 +17,7 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         _soundSource = GetComponent<AudioSource>();
-        _coinSound = Resources.Load("mixkit-unlock-game-notification-253") as AudioClip;
+        _coinSound = Resources.Load("mixkit-unlock-game-notification-253") as AudioClip; //load sounds from resource folder
         _jumpSound = Resources.Load("mixkit-quick-jump-arcade-game-239") as AudioClip;
         _deathSound = Resources.Load("mixkit-failure-arcade-alert-notification-240") as AudioClip;
     }
@@ -26,6 +26,18 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnEnable() { // listen for events indicating a sound need to be played.
+        EventHandler.PlayerFell += PlayDeathSound;
+        EventHandler.CoinReached += PlayCoinSound;
+        EventHandler.PlayerJumped += PlayJumpSound;
+    }
+
+    private void OnDisable() {
+        EventHandler.PlayerFell -= PlayDeathSound;
+        EventHandler.CoinReached -= PlayCoinSound;
+        EventHandler.PlayerJumped -= PlayJumpSound;
     }
 
     public void PlayCoinSound(){

@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         if(_spacePressed && _grounded){ // Jump
             _playerBody.AddForce(Vector2.up * _jumpHeight, ForceMode2D.Impulse);
             gameObject.GetComponent<ColourSwitch>().Switch();
+            EventHandler.PlayerJumped();
         }  
     }
 
